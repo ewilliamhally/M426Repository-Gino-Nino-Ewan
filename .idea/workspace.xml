@@ -4,32 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98df9893-5272-4db2-a226-30aa23509d42" name="Changes" comment="updated project">
-      <change afterPath="$PROJECT_DIR$/tripsbackend/src/main/java/bbw/trips/demo/repository/KeyHolderFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/212c65a5-9e84-4df6-ae92-8817af715afb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/212c65a5-9e84-4df6-ae92-8817af715afb.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5ef95a71-6cb0-476c-b84d-b8e040b81a69.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5ef95a71-6cb0-476c-b84d-b8e040b81a69/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5ef95a71-6cb0-476c-b84d-b8e040b81a69/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5ef95a71-6cb0-476c-b84d-b8e040b81a69/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tripsbackend/database/aria_log.00000001" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/database/aria_log.00000001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tripsbackend/database/aria_log_control" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/database/aria_log_control" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tripsbackend/database/ddl_recovery.log" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/database/ddl_recovery.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tripsbackend/database/demo/trips.frm" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/database/demo/trips.frm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tripsbackend/database/ib_buffer_pool" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/database/ib_buffer_pool" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tripsbackend/database/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/database/ib_logfile0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tripsbackend/database/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/database/ibdata1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tripsbackend/database/mysql/innodb_index_stats.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/database/mysql/innodb_index_stats.ibd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tripsbackend/database/mysql/innodb_table_stats.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/database/mysql/innodb_table_stats.ibd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tripsbackend/src/main/java/bbw/trips/demo/controller/TripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/src/main/java/bbw/trips/demo/controller/TripController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tripsbackend/src/main/java/bbw/trips/demo/model/TirpModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/src/main/java/bbw/trips/demo/model/TirpModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tripsbackend/src/main/java/bbw/trips/demo/repository/TripRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/src/main/java/bbw/trips/demo/repository/TripRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tripsbackend/src/main/java/bbw/trips/demo/service/TripService.java" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/src/main/java/bbw/trips/demo/service/TripService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tripsbackend/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/src/main/resources/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tripsbackend/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/src/main/resources/schema.sql" afterDir="false" />
-    </list>
+    <list default="true" id="98df9893-5272-4db2-a226-30aa23509d42" name="Changes" comment="updated project" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,14 +48,13 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Nino Dokumente/Schule/Berufsschule/Semester 4/Modul 426/M426Repository-Gino-Nino-Ewan-",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "fe01ce2a7fbac8fafaed7c982a04e229"
+    "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -120,23 +94,9 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="tripsbackend.bbw-mariadb-dev: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="bbw-mariadb-dev" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="tripsbackend/docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Docker.tripsbackend: Compose Deployment" />
-        <item itemvalue="Docker.tripsbackend.bbw-mariadb-dev: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -149,8 +109,8 @@
       <option name="presentableId" value="Default" />
       <updated>1720164502579</updated>
       <workItem from="1720164503846" duration="4715000" />
-      <workItem from="1720169453835" duration="1698000" />
-      <workItem from="1720185986010" duration="3378000" />
+      <workItem from="1720169453835" duration="1390000" />
+      <workItem from="1720185472641" duration="24000" />
     </task>
     <task id="LOCAL-00001" summary="updated project">
       <created>1720170626167</created>
@@ -166,14 +126,7 @@
       <option name="project" value="LOCAL" />
       <updated>1720170648299</updated>
     </task>
-    <task id="LOCAL-00003" summary="updated project">
-      <created>1720171228068</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1720171228068</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,27 +156,7 @@
           <line>7</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/tripsbackend/src/main/java/bbw/trips/demo/repository/TripRepository.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/tripsbackend/src/main/java/bbw/trips/demo/repository/TripRepository.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.sql.SQLSyntaxErrorException" package="java.sql" />
-          <option name="timeStamp" value="11" />
-        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <pin-to-top-manager>
-      <pinned-members>
-        <PinnedItemInfo parentTag="java.lang.String" memberName="value" />
-        <PinnedItemInfo parentTag="org.springframework.jdbc.support.GeneratedKeyHolder" memberName="keyList" />
-      </pinned-members>
-    </pin-to-top-manager>
   </component>
 </project>

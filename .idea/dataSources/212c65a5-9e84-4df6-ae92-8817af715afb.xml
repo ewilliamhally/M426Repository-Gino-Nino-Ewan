@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="demo@localhost">
-  <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.43">
+  <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.48">
     <root id="1">
       <DefaultCasing>mixed/mixed</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -1303,20 +1303,20 @@
     </table>
     <column id="517" parent="516" name="id">
       <AutoIncrement>1</AutoIncrement>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="518" parent="516" name="location">
-      <DataType>varchar(255)|0s</DataType>
+      <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="519" parent="516" name="image">
-      <DataType>blob|0s</DataType>
+      <DasType>blob|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="520" parent="516" name="name">
-      <DataType>varchar(255)|0s</DataType>
+      <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
     </column>
     <index id="521" parent="516" name="PRIMARY">
