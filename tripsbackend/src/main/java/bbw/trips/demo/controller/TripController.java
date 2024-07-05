@@ -4,10 +4,7 @@ import bbw.trips.demo.model.TirpModel;
 import bbw.trips.demo.service.TripService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @RestController
@@ -20,4 +17,10 @@ public class TripController {
     public ResponseEntity<List<TirpModel>> getAllTrips() {
         return ResponseEntity.ok(tripService.getAllTrips());
     }
+
+    @PostMapping("/saveTrips")
+    public ResponseEntity<TirpModel> saveNewTrip(@RequestBody TirpModel tripModel){
+        return ResponseEntity.ok(tripService.saveTrips(tripModel));
+    }
+
 }

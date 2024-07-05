@@ -15,4 +15,8 @@ public class TripService {
     public List<TirpModel> getAllTrips() {
         return tripRepository.getAllTrips();
     }
+
+    public TirpModel saveTrips(TirpModel tripModel) {
+        return tripRepository.saveTrips(tripModel);
+    }
 }

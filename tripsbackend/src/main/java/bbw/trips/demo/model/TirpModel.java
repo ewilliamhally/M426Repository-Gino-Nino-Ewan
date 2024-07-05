@@ -8,6 +8,7 @@ import lombok.Data;
 public class TirpModel {
     private Long id;
     private String location;
-    private String Image;
-    private String Name;
+    private String image;
+    private String name;
+    private String description;
 }
