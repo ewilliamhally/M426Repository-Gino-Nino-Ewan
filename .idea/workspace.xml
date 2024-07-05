@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98df9893-5272-4db2-a226-30aa23509d42" name="Changes" comment="updated project">
-      <change beforePath="$PROJECT_DIR$/tripsbackend/database/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/database/ib_logfile0" afterDir="false" />
-    </list>
+    <list default="true" id="98df9893-5272-4db2-a226-30aa23509d42" name="Changes" comment="updated project" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,7 +53,8 @@
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm"
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -111,6 +110,7 @@
       <updated>1720164502579</updated>
       <workItem from="1720164503846" duration="4715000" />
       <workItem from="1720169453835" duration="1390000" />
+      <workItem from="1720185472641" duration="24000" />
     </task>
     <task id="LOCAL-00001" summary="updated project">
       <created>1720170626167</created>
