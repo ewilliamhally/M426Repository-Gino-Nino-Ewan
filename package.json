@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@reach/combobox": "^0.18.0"
+    "@reach/combobox": "^0.18.0",
+    "react-router-dom": "^6.24.1"
   }
 }

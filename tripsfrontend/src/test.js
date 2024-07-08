@@ -16,45 +16,23 @@ const airports = [
 
 const currencies = ['USD', 'EUR', 'CHF', 'GBP', 'JPY'];
 
-const airlines = ['Swiss Air', 'Lufthansa', 'Emirates', 'Qatar Airways', 'Singapore Airlines'];
-
-const getRandomPrice = () => {
-  return (Math.random() * (1000 - 200) + 200).toFixed(2);
-};
-
-const getRandomDuration = () => {
-  const hours = Math.floor(Math.random() * 12) + 1;
-  const minutes = Math.floor(Math.random() * 60);
-  return `${hours}h ${minutes}m`;
-};
-
-const getRandomAirline = () => {
-  return airlines[Math.floor(Math.random() * airlines.length)];
-};
-
 const Ticket = () => {
   const [departure, setDeparture] = useState('');
   const [arrival, setArrival] = useState('');
   const [currency, setCurrency] = useState('');
   const [date, setDate] = useState('');
-  const [results, setResults] = useState(null);
+  const [query, setQuery] = useState('');
 
   const handleSearch = () => {
-    const fakeResponse = {
-      departure,
-      arrival,
-      price: `${getRandomPrice()} ${currency}`,
-      duration: getRandomDuration(),
-      airline: getRandomAirline(),
-      date
-    };
-    setResults(fakeResponse);
+    const apiKey = '61d98334a653a743d9abecac1bd9377a55014f0831990a2f1285070f2d8440f2';
+    const apiUrl = `https://serpapi.com/search?engine=google_flights&departure_id=${departure}&arrival_id=${arrival}&type=2&outbound_date=${date}&api_key=${apiKey}&currency=${currency}`;
+    setQuery(apiUrl);
   };
 
   return (
     <div className="ticket-container">
-      <h1 className="title">Flight Search</h1>
-      <div className="form-group">
+      <h1>Flight Search</h1>
+      <div>
         <label>
           Departure Airport:
           <select value={departure} onChange={(e) => setDeparture(e.target.value)}>
@@ -65,7 +43,7 @@ const Ticket = () => {
           </select>
         </label>
       </div>
-      <div className="form-group">
+      <div>
         <label>
           Arrival Airport:
           <select value={arrival} onChange={(e) => setArrival(e.target.value)}>
@@ -76,7 +54,7 @@ const Ticket = () => {
           </select>
         </label>
       </div>
-      <div className="form-group">
+      <div>
         <label>
           Currency:
           <select value={currency} onChange={(e) => setCurrency(e.target.value)}>
@@ -87,26 +65,17 @@ const Ticket = () => {
           </select>
         </label>
       </div>
-      <div className="form-group">
+      <div>
         <label>
           Date:
           <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
         </label>
       </div>
-      <button onClick={handleSearch} className="search-button">Search Flights</button>
-      {results && (
+      <button onClick={handleSearch}>Search Flights</button>
+      {query && (
         <div className="results">
-          <h2>Flight Results:</h2>
-          <div className="flight">
-            <h3>{results.airline}</h3>
-            <div className="leg">
-              <p><strong>Departure:</strong> {results.departure}</p>
-              <p><strong>Arrival:</strong> {results.arrival}</p>
-              <p><strong>Price:</strong> {results.price}</p>
-              <p><strong>Duration:</strong> {results.duration}</p>
-              <p><strong>Date:</strong> {results.date}</p>
-            </div>
-          </div>
+          <h2>Generated Query:</h2>
+          <pre>{query}</pre>
         </div>
       )}
     </div>
