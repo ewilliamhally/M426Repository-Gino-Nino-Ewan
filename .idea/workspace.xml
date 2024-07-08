@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98df9893-5272-4db2-a226-30aa23509d42" name="Changes" comment="updated project" />
+    <list default="true" id="98df9893-5272-4db2-a226-30aa23509d42" name="Changes" comment="Created Jwt login prozess">
+      <change afterPath="$PROJECT_DIR$/tripsbackend/src/main/java/bbw/trips/demo/repository/model/TripModelEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tripsbackend/src/main/java/bbw/trips/demo/service/security/SecurityService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tripsbackend/src/main/java/bbw/trips/demo/service/trip/TripDtoConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tripsbackend/src/main/java/bbw/trips/demo/service/trip/TripEntityConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9315cdce-1136-41c0-8225-19f902f2fb83.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9315cdce-1136-41c0-8225-19f902f2fb83.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tripsbackend/database/ddl_recovery.log" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/database/ddl_recovery.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tripsbackend/database/demo/User.frm" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/database/demo/User.frm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tripsbackend/database/demo/trips.frm" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/database/demo/trips.frm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tripsbackend/database/demo/trips.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/database/demo/trips.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tripsbackend/database/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/database/ib_logfile0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tripsbackend/src/main/java/bbw/trips/demo/controller/TripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/src/main/java/bbw/trips/demo/controller/TripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tripsbackend/src/main/java/bbw/trips/demo/model/TirpModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/src/main/java/bbw/trips/demo/model/TripModelDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tripsbackend/src/main/java/bbw/trips/demo/repository/TripRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/src/main/java/bbw/trips/demo/repository/TripRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tripsbackend/src/main/java/bbw/trips/demo/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/src/main/java/bbw/trips/demo/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tripsbackend/src/main/java/bbw/trips/demo/service/trip/TripService.java" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/src/main/java/bbw/trips/demo/service/trip/TripService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tripsbackend/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/src/main/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tripsbackend/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/src/main/resources/schema.sql" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,11 +32,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="save_Trip" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
@@ -48,12 +73,14 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Nino Dokumente/Schule/Berufsschule/Semester 4/Modul 426/M426Repository-Gino-Nino-Ewan-",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
+    "spring.configuration.checksum": "fe01ce2a7fbac8fafaed7c982a04e229",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -64,6 +91,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="bbw.trips.demo.service.user" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Nino Dokumente\Schule\Berufsschule\Semester 4\Modul 426\BuisnesseTrips\tirpsbackend\src\main\resources" />
     </key>
@@ -111,6 +141,7 @@
       <workItem from="1720164503846" duration="4715000" />
       <workItem from="1720169453835" duration="1390000" />
       <workItem from="1720185472641" duration="24000" />
+      <workItem from="1720422083039" duration="10097000" />
     </task>
     <task id="LOCAL-00001" summary="updated project">
       <created>1720170626167</created>
@@ -126,7 +157,21 @@
       <option name="project" value="LOCAL" />
       <updated>1720170648299</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="updated project">
+      <created>1720189652050</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1720189652050</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Created Jwt login prozess">
+      <created>1720428504193</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1720428504194</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,7 +191,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="updated project" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated project" />
+    <MESSAGE value="Created Jwt login prozess" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created Jwt login prozess" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -156,7 +202,33 @@
           <line>7</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tripsbackend/src/main/java/bbw/trips/demo/repository/UserRepository.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tripsbackend/src/main/java/bbw/trips/demo/security/auth/AuthenticationService.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tripsbackend/src/main/java/bbw/trips/demo/security/auth/AuthenticationService.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tripsbackend/src/main/java/bbw/trips/demo/repository/UserRepository.java</url>
+          <line>102</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.lang.String" memberName="value" />
+        <PinnedItemInfo parentTag="org.springframework.jdbc.support.GeneratedKeyHolder" memberName="keyList" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
