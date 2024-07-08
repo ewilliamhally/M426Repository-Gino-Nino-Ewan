@@ -1,7 +1,10 @@
 package bbw.trips.demo.controller;
 
-import bbw.trips.demo.model.TirpModel;
+import bbw.trips.demo.model.TripModelDto;
+import bbw.trips.demo.model.UserDto;
+import bbw.trips.demo.service.security.SecurityService;
 import bbw.trips.demo.service.trip.TripService;
+import bbw.trips.demo.service.user.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,14 +16,19 @@ import java.util.List;
 @AllArgsConstructor
 public class TripController {
     private final TripService tripService;
+    private final UserService userService;
+    private final SecurityService securityService;
     @GetMapping("/allTrips")
-    public ResponseEntity<List<TirpModel>> getAllTrips() {
-        return ResponseEntity.ok(tripService.getAllTrips());
+    public ResponseEntity<List<TripModelDto>> getAllTrips() {
+        List<UserDto> userDtoList = userService.getAllUser();
+        return ResponseEntity.ok(tripService.getAllTrips(userDtoList));
     }
 
     @PostMapping("/saveTrips")
-    public ResponseEntity<TirpModel> saveNewTrip(@RequestBody TirpModel tripModel){
-        return ResponseEntity.ok(tripService.saveTrips(tripModel));
+    public ResponseEntity<TripModelDto> saveNewTrip(@RequestBody TripModelDto tripModelDto){
+        UserDto userDto = securityService.getUserDtoFromSecurityHolder();
+        tripModelDto.setUserDto(userDto);
+        return ResponseEntity.ok(tripService.saveTrips(tripModelDto));
     }
 
 }

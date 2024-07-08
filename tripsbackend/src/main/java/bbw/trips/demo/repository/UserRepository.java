@@ -25,7 +25,7 @@ public class UserRepository {
      * @return List of {@link UserEntity}.
      */
     public List<UserEntity> getAllUser() {
-        String sql = "SELECT * FROM \"User\"";
+        String sql = "SELECT * FROM User";
         return jdbcTemplate.query(
                 sql,
                 ((rs, rowNum) -> {
@@ -75,7 +75,7 @@ public class UserRepository {
      * @return UserEntity object representing the user with the given ID.
      */
     public UserEntity getUserById(long userId) {
-        String sql = "SELECT * FROM \"User\" WHERE id = ?";
+        String sql = "SELECT * FROM User WHERE id = ?";
         return jdbcTemplate.queryForObject(
                 sql,
                 new Object[] {userId},

@@ -1307,7 +1307,7 @@
     </table>
     <column id="518" parent="516" name="id">
       <AutoIncrement>1</AutoIncrement>
-      <DataType>int(11)|0s</DataType>
+      <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
@@ -1354,7 +1354,7 @@
       <UnderlyingIndexName>email</UnderlyingIndexName>
     </key>
     <column id="528" parent="517" name="id">
-      <AutoIncrement>21</AutoIncrement>
+      <AutoIncrement>1</AutoIncrement>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1375,12 +1375,27 @@
       <DataType>varchar(255)|0s</DataType>
       <Position>5</Position>
     </column>
-    <index id="533" parent="517" name="PRIMARY">
+    <column id="533" parent="517" name="user_id">
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <foreign-key id="534" parent="517" name="trips_ibfk_1">
+      <ColNames>user_id</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>id</RefColNames>
+      <RefTableName>User</RefTableName>
+    </foreign-key>
+    <index id="535" parent="517" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="534" parent="517" name="PRIMARY">
+    <index id="536" parent="517" name="user_id">
+      <ColNames>user_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="537" parent="517" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
