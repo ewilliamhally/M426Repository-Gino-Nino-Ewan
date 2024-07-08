@@ -1,7 +1,7 @@
 import React from 'react';
 import Login from './login.js';
-import Ticket from './ticket';
-import Trips from './trips';
+import Trips from './Trips.js';
+import Ticket from './ticket.js';
 
 function App() {
   return (
