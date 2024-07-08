@@ -9,7 +9,7 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  padding-bottom: 20px; /* Fügt unten Padding hinzu */
+  padding-bottom: 20px;
   box-sizing: border-box;
 }
 
@@ -21,7 +21,10 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   box-sizing: border-box;
-  margin-bottom: 20px; /* Fügt unten Abstand hinzu */
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
@@ -33,6 +36,7 @@ h1 {
 
 .form-group {
   margin-bottom: 15px;
+  width: 100%;
 }
 
 label {
@@ -42,7 +46,7 @@ label {
   color: #555;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], input[type="email"] {
   width: 100%;
   padding: 10px;
   border: 1px solid #ddd;
@@ -51,22 +55,34 @@ input[type="text"], input[type="password"] {
   transition: border-color 0.3s;
 }
 
-input[type="text"]:focus, input[type="password"]:focus {
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
   border-color: #6a11cb;
 }
 
-.login-button {
+.login-button, .toggle-button {
   width: 100%;
   padding: 12px;
-  background-color: #6a11cb;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.login-button {
+  background-color: #6a11cb;
 }
 
 .login-button:hover {
   background-color: #5a0eb5;
+}
+
+.toggle-button {
+  background-color: #2575fc;
+}
+
+.toggle-button:hover {
+  background-color: #1e63d8;
 }
