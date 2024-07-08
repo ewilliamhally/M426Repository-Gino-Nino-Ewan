@@ -1,0 +1,84 @@
+/* ticket.css */
+
+.ticket-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .ticket-container h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .ticket-container div {
+    margin-bottom: 15px;
+  }
+  
+  .ticket-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .ticket-container select,
+  .ticket-container input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .ticket-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .ticket-container button:hover {
+    background-color: #45a049;
+  }
+  
+  .ticket-container .results {
+    margin-top: 20px;
+  }
+  
+  .ticket-container .results .flight {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+  }
+  
+  .ticket-container .results .flight h3 {
+    margin-top: 0;
+  }
+  
+  .ticket-container .results .flight .leg {
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    margin-top: 10px;
+  }
+  
+  .ticket-container .results .flight .leg:first-child {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+  }
+  
+  .error {
+    color: red;
+    font-weight: bold;
+  }
+  
