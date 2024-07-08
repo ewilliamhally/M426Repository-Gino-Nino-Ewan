@@ -7,3 +7,6 @@ INSERT INTO trips (location, image, name, description) VALUES ('Geneva, Switzerl
 INSERT INTO trips (location, image, name, description) VALUES ('Basel, Switzerland', 0x89504E470D0A1A0A0000000D49484452000000010000000108020000009077250E0000000B49444154789C63606060200000028A0105A9F5740000000049454E44AE426082, 'Basel Tour','Test description');
 
 INSERT INTO trips (location, image, name, description) VALUES ('Lucerne, Switzerland', 0x89504E470D0A1A0A0000000D49484452000000010000000108020000009077250E0000000B49444154789C63606060200000028A0105A9F5740000000049454E44AE426082, 'Lucerne Journey','Test description');
+
+INSERT INTO User (firstname, lastname, email,password,role)
+VALUES ('root', 'root', 'root.trip@example.com', 1234, 'Admin');

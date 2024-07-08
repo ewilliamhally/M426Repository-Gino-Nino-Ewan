@@ -1,7 +1,7 @@
 package bbw.trips.demo.controller;
 
 import bbw.trips.demo.model.TirpModel;
-import bbw.trips.demo.service.TripService;
+import bbw.trips.demo.service.trip.TripService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
