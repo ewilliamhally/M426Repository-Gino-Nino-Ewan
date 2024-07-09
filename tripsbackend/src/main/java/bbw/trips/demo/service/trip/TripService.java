@@ -6,6 +6,7 @@ import bbw.trips.demo.repository.TripRepository;
 import bbw.trips.demo.repository.UserRepository;
 import bbw.trips.demo.repository.model.TripModelEntity;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -40,7 +41,30 @@ public class TripService {
         return convertTripModelEntityToTripModelDto(tripRepository.createTrips(tripModelEntity), userDto);
     }
 
-    public TripModelDto saveTrip(TripModelDto tripModelDto, UserDto userDto) {
-        return null;
+    public ResponseEntity<Void> saveTrip(Long tripId, UserDto userDto) {
+        tripRepository.saveTrip(tripId, userDto.getId());
+        return ResponseEntity.noContent().build();
+    }
+
+    public ResponseEntity<Void> removeSavedTrips(Long tripId, UserDto userDto) {
+        tripRepository.removeSavedTrip(tripId, userDto.getId());
+        return ResponseEntity.noContent().build();
+    }
+
+
+    public List<TripModelDto> getAllSavedTrips(List<UserDto> userDtoList, UserDto userDto) {
+        List<TripModelEntity> tripModelEntities = tripRepository.getAllSavedTrips(userDto.getId());
+        return tripModelEntities.stream()
+                .map(
+                        tripModelEntity ->
+                                convertTripModelEntityToTripModelDto(
+                                        tripModelEntity,
+                                        userDtoList.stream()
+                                                .filter(dto -> dto.getId().equals(tripModelEntity.getUserId()))
+                                                .findFirst()
+                                                .orElse(UserDto.builder().build())))
+                .collect(Collectors.toList());
     }
 }
+
+
