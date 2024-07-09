@@ -1,6 +1,6 @@
 import React from 'react';
 import Login from './login.js';
-import Trips from './Trips.js';
+import Trips from './trips.js';
 import Ticket from './ticket.js';
 
 function App() {
