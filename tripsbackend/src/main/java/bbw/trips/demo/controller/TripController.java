@@ -24,11 +24,30 @@ public class TripController {
         return ResponseEntity.ok(tripService.getAllTrips(userDtoList));
     }
 
-    @PostMapping("/saveTrips")
-    public ResponseEntity<TripModelDto> saveNewTrip(@RequestBody TripModelDto tripModelDto){
+    @PostMapping("/createTrips")
+    public ResponseEntity<TripModelDto> createNewTrip(@RequestBody TripModelDto tripModelDto){
         UserDto userDto = securityService.getUserDtoFromSecurityHolder();
         tripModelDto.setUserDto(userDto);
-        return ResponseEntity.ok(tripService.saveTrips(tripModelDto));
+        return ResponseEntity.ok(tripService.createTrips(tripModelDto));
     }
 
+    @PostMapping("/saveTrip/{id}")
+    public ResponseEntity<Void> saveTrip(@PathVariable String id) {
+        UserDto userDto = securityService.getUserDtoFromSecurityHolder();
+        return tripService.saveTrip(Long.valueOf(id), userDto);
+    }
+
+    @PostMapping("/removeSavedTrips/{id}")
+    public ResponseEntity<Void> removeSavedTrips(@PathVariable String id) {
+        UserDto userDto = securityService.getUserDtoFromSecurityHolder();
+        return tripService.removeSavedTrips(Long.valueOf(id), userDto);
+    }
+
+    @GetMapping("/allSavedTrips")
+    public ResponseEntity<List<TripModelDto>> getAllSavedTrips() {
+        List<UserDto> userDtoList = userService.getAllUser();
+        UserDto userDto = securityService.getUserDtoFromSecurityHolder();
+        return ResponseEntity.ok(tripService.getAllSavedTrips(userDtoList, userDto));
+
+    }
 }
