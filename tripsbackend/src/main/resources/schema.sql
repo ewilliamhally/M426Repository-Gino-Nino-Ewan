@@ -15,3 +15,10 @@ CREATE TABLE trips (
                        user_id BIGINT NOT NULL ,
                        FOREIGN KEY (user_id) REFERENCES User(id) ON DELETE CASCADE );
 
+CREATE TABLE user_trips (
+                            user_id BIGINT,
+                            trip_id BIGINT,
+                            PRIMARY KEY (user_id, trip_id),
+                            FOREIGN KEY (user_id) REFERENCES User(id),
+                            FOREIGN KEY (trip_id) REFERENCES trips(id)
+);
