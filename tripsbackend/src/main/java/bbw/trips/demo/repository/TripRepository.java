@@ -1,6 +1,7 @@
 package bbw.trips.demo.repository;
 
-import bbw.trips.demo.model.TirpModel;
+import bbw.trips.demo.model.TripModelDto;
+import bbw.trips.demo.repository.model.TripModelEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.KeyHolder;
@@ -18,22 +19,23 @@ public class TripRepository {
     private final JdbcTemplate jdbcTemplate;
     private final KeyHolderFactory keyHolderFactory;
 
-    public List<TirpModel> getAllTrips() {
+    public List<TripModelEntity> getAllTrips() {
         String sql = "SELECT * FROM trips";
         return jdbcTemplate.query(sql, (rs, rowNum) -> {
-            TirpModel tirpModel = TirpModel.builder().build();
-            tirpModel.setId(rs.getLong("id"));
-            tirpModel.setLocation(rs.getString("location"));
-            tirpModel.setName(rs.getString("name"));
-            tirpModel.setImage(rs.getString("image"));
-            tirpModel.setDescription(rs.getString("description"));
-            return tirpModel;
+            TripModelEntity tripModelEntity = TripModelEntity.builder().build();
+            tripModelEntity.setId(rs.getLong("id"));
+            tripModelEntity.setLocation(rs.getString("location"));
+            tripModelEntity.setName(rs.getString("name"));
+            tripModelEntity.setImage(rs.getString("image"));
+            tripModelEntity.setDescription(rs.getString("description"));
+            tripModelEntity.setUserId(rs.getLong("user_id"));
+            return tripModelEntity;
         });
     }
 
-    public TirpModel saveTrips(TirpModel tripModel) {
+    public TripModelEntity saveTrips(TripModelEntity tripModel) {
         KeyHolder keyHolder = keyHolderFactory.keyHolder();
-        String sql ="INSERT INTO trips (location, image, name, description) VALUES(?, ?, ?, ?)";
+        String sql ="INSERT INTO trips (location, image, name, description, user_id) VALUES(?, ?, ?, ?,?)";
         jdbcTemplate.update(
                 connection -> {
                     PreparedStatement pst = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -41,6 +43,7 @@ public class TripRepository {
                     pst.setString(2, tripModel.getImage());
                     pst.setString(3, tripModel.getName());
                     pst.setString(4, tripModel.getDescription());
+                    pst.setLong(5, tripModel.getUserId());
                     return pst;
                 },
                 keyHolder);
