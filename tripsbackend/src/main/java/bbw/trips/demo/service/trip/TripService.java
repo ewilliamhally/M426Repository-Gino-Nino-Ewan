@@ -34,9 +34,13 @@ public class TripService {
                 .collect(Collectors.toList());
     }
 
-    public TripModelDto saveTrips(TripModelDto tripModelDto) {
+    public TripModelDto createTrips(TripModelDto tripModelDto) {
         UserDto userDto = tripModelDto.getUserDto();
         TripModelEntity tripModelEntity = convertTripModelDtoToTripModelEntity(tripModelDto);
-        return convertTripModelEntityToTripModelDto(tripRepository.saveTrips(tripModelEntity), userDto);
+        return convertTripModelEntityToTripModelDto(tripRepository.createTrips(tripModelEntity), userDto);
+    }
+
+    public TripModelDto saveTrip(TripModelDto tripModelDto, UserDto userDto) {
+        return null;
     }
 }

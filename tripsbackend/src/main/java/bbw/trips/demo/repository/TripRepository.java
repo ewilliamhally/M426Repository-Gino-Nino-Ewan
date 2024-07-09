@@ -1,6 +1,5 @@
 package bbw.trips.demo.repository;
 
-import bbw.trips.demo.model.TripModelDto;
 import bbw.trips.demo.repository.model.TripModelEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -33,7 +32,7 @@ public class TripRepository {
         });
     }
 
-    public TripModelEntity saveTrips(TripModelEntity tripModel) {
+    public TripModelEntity createTrips(TripModelEntity tripModel) {
         KeyHolder keyHolder = keyHolderFactory.keyHolder();
         String sql ="INSERT INTO trips (location, image, name, description, user_id) VALUES(?, ?, ?, ?,?)";
         jdbcTemplate.update(

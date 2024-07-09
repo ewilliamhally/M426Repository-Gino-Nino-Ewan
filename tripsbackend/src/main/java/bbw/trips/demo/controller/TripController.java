@@ -24,11 +24,18 @@ public class TripController {
         return ResponseEntity.ok(tripService.getAllTrips(userDtoList));
     }
 
-    @PostMapping("/saveTrips")
-    public ResponseEntity<TripModelDto> saveNewTrip(@RequestBody TripModelDto tripModelDto){
+    @PostMapping("/createTrips")
+    public ResponseEntity<TripModelDto> createNewTrip(@RequestBody TripModelDto tripModelDto){
         UserDto userDto = securityService.getUserDtoFromSecurityHolder();
         tripModelDto.setUserDto(userDto);
-        return ResponseEntity.ok(tripService.saveTrips(tripModelDto));
+        return ResponseEntity.ok(tripService.createTrips(tripModelDto));
+    }
+
+    @PostMapping("/saveTrip")
+    public ResponseEntity<TripModelDto> saveTrip(@RequestBody TripModelDto tripModelDto){
+        UserDto userDto = securityService.getUserDtoFromSecurityHolder();
+        tripService.saveTrip(tripModelDto, userDto);
+        return null;
     }
 
 }
