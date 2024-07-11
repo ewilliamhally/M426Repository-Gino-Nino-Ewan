@@ -1,6 +1,21 @@
 import React, { useState } from 'react';
 import './login.css';
 
+const apiRequest = async (url, method, body) => {
+  const headers = {
+    'Content-Type': 'application/json',
+  };
+
+  const response = await fetch(url, {
+    method: method,
+    headers: headers,
+    body: JSON.stringify(body),
+  });
+
+  const data = await response.json();
+  return { status: response.status, data };
+};
+
 const Login = () => {
   const [firstname, setFirstname] = useState('');
   const [lastname, setLastname] = useState('');
@@ -9,57 +24,60 @@ const Login = () => {
   const [isRegistering, setIsRegistering] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
 
+  const saveToken = (token) => {
+    localStorage.setItem('authToken', token);
+  };
+
   const handleLogin = async (e) => {
     e.preventDefault();
-    
-    try {
-      const response = await fetch('http://localhost:8080/api/auth/authenticate', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: email,
-          password: password,
-        }),
-      });
+    const requestBody = {
+      email: email,
+      password: password,
+    };
+    const requestMethod = 'POST';
+    const requestUrl = 'http://localhost:8080/api/auth/authenticate';
 
-      if (response.ok) {
-        const data = await response.json();
+    try {
+      const { status, data } = await apiRequest(requestUrl, requestMethod, requestBody);
+
+      if (status === 200) {
+        saveToken(data.token);
         setLoggedIn(true);
         alert('Erfolgreich eingeloggt');
       } else {
-        alert('Ungültige Anmeldeinformationen');
+        console.error('Login failed:', data);
+        alert('Ungueltige Anmeldeinformationen');
       }
     } catch (error) {
-      alert('Ein Fehler ist aufgetreten');
+      console.error('Error during login:', error);
+      alert(`Ein Fehler ist aufgetreten:\n\nMethode: ${requestMethod}\nURL: ${requestUrl}\nRequest Body: ${JSON.stringify(requestBody, null, 2)}\n\nFehlermeldung: ${error}`);
     }
   };
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    
-    try {
-      const response = await fetch('http://localhost:8080/api/auth/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          firstname: firstname,
-          lastname: lastname,
-          email: email,
-          password: password,
-        }),
-      });
+    const requestBody = {
+      firstname: firstname,
+      lastname: lastname,
+      email: email,
+      password: password,
+    };
+    const requestMethod = 'POST';
+    const requestUrl = 'http://localhost:8080/api/auth/register';
 
-      if (response.ok) {
+    try {
+      const { status, data } = await apiRequest(requestUrl, requestMethod, requestBody);
+
+      if (status === 200) {
+        saveToken(data.token);
         alert('Erfolgreich registriert');
       } else {
+        console.error('Registration failed:', data);
         alert('Registrierung fehlgeschlagen');
       }
     } catch (error) {
-      alert('Ein Fehler ist aufgetreten');
+      console.error('Error during registration:', error);
+      alert(`Ein Fehler ist aufgetreten:\n\nMethode: ${requestMethod}\nURL: ${requestUrl}\nRequest Body: ${JSON.stringify(requestBody, null, 2)}\n\nFehlermeldung: ${error}`);
     }
   };
 

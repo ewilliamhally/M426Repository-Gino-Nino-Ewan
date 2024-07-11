@@ -1,42 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './trips.css';
-import editIcon from './edit.svg';
 import deleteIcon from './trash.svg';
 
-const initialTravelData = [
-  {
-    id: 1,
-    name: "Reise nach Paris",
-    location: "Paris, Frankreich",
-    description: "Erlebe die Stadt der Liebe mit ihren berühmten Sehenswürdigkeiten und dem einzigartigen Charme.",
-    image: "https://via.placeholder.com/150"
-  },
-  {
-    id: 2,
-    name: "Safari in Kenia",
-    location: "Nairobi, Kenia",
-    description: "Erlebe die wilde Natur und die beeindruckende Tierwelt Afrikas auf einer unvergesslichen Safari.",
-    image: "https://via.placeholder.com/150"
-  },
-  {
-    id: 3,
-    name: "Strandurlaub auf den Malediven",
-    location: "Malediven",
-    description: "Entspanne an weißen Sandstränden und genieße das kristallklare Wasser des Indischen Ozeans.",
-    image: "https://via.placeholder.com/150"
-  }
-];
-
 const Trips = () => {
-  const [travelData, setTravelData] = useState(initialTravelData);
+  const [travelData, setTravelData] = useState([]);
   const [newTrip, setNewTrip] = useState({
     name: '',
     location: '',
     description: '',
-    image: 'https://via.placeholder.com/150'
+    image: ''
   });
-  const [isEditing, setIsEditing] = useState(false);
-  const [currentTrip, setCurrentTrip] = useState(null);
+
+  useEffect(() => {
+    fetchTrips();
+  }, []);
+
+  const fetchTrips = async () => {
+    try {
+      const response = await fetch('http://localhost:8080/api/trips/allTrips');
+      if (response.ok) {
+        const data = await response.json();
+        setTravelData(data);
+      } else {
+        console.error('Failed to fetch trips');
+      }
+    } catch (error) {
+      console.error('Error fetching trips:', error);
+    }
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -46,43 +37,68 @@ const Trips = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setNewTrip({
+        ...newTrip,
+        image: reader.result.split(',')[1]
+      });
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (isEditing) {
-      setTravelData(
-        travelData.map((trip) =>
-          trip.id === currentTrip.id ? { ...newTrip, id: currentTrip.id } : trip
-        )
-      );
-      setIsEditing(false);
-      setCurrentTrip(null);
-    } else {
-      setTravelData([
-        ...travelData,
-        { ...newTrip, id: travelData.length + 1 }
-      ]);
+    const token = localStorage.getItem('authToken');
+
+    try {
+      const response = await fetch('http://localhost:8080/api/trips/createTrips', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(newTrip)
+      });
+
+      if (response.ok) {
+        const createdTrip = await response.json();
+        setTravelData([...travelData, createdTrip]);
+        setNewTrip({
+          name: '',
+          location: '',
+          description: '',
+          image: ''
+        });
+      } else {
+        console.error('Failed to create trip');
+      }
+    } catch (error) {
+      console.error('Error creating trip:', error);
     }
-    setNewTrip({
-      name: '',
-      location: '',
-      description: '',
-      image: 'https://via.placeholder.com/150'
-    });
   };
 
-  const handleEdit = (trip) => {
-    setIsEditing(true);
-    setCurrentTrip(trip);
-    setNewTrip({
-      name: trip.name,
-      location: trip.location,
-      description: trip.description,
-      image: trip.image
-    });
-  };
+  const handleDelete = async (id) => {
+    const token = localStorage.getItem('authToken');
 
-  const handleDelete = (id) => {
-    setTravelData(travelData.filter((trip) => trip.id !== id));
+    try {
+      const response = await fetch(`http://localhost:8080/api/trips/removeSavedTrips/${id}`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+
+      if (response.ok) {
+        setTravelData(travelData.filter((trip) => trip.id !== id));
+      } else {
+        console.error('Failed to delete trip');
+      }
+    } catch (error) {
+      console.error('Error deleting trip:', error);
+    }
   };
 
   return (
@@ -90,21 +106,18 @@ const Trips = () => {
       <div className="cards-container">
         {travelData.map((trip) => (
           <div key={trip.id} className="card">
-            <img src={trip.image} alt={trip.name} className="card-image" />
+            <img src={`data:image/png;base64,${trip.image}`} alt={trip.name} className="card-image" />
             <h2 className="card-name">{trip.name}</h2>
             <p className="card-location">{trip.location}</p>
             <p className="card-description">{trip.description}</p>
-            <button onClick={() => handleEdit(trip)} className="edit-button">
-              <img src={editIcon} alt="Bearbeiten" className="icon" />
-            </button>
             <button onClick={() => handleDelete(trip.id)} className="delete-button">
-              <img src={deleteIcon} alt="Löschen" className="icon" />
+              <img src={deleteIcon} alt="Loeschen" className="icon" />
             </button>
           </div>
         ))}
       </div>
       <form onSubmit={handleSubmit} className="new-trip-form">
-        <h2>{isEditing ? 'Reise bearbeiten' : 'Neue Reise hinzufügen'}</h2>
+        <h2>Neue Reise hinzufuegen</h2>
         <input
           type="text"
           name="name"
@@ -128,10 +141,16 @@ const Trips = () => {
           onChange={handleChange}
           required
         />
-        <button type="submit">{isEditing ? 'Aktualisieren' : 'Hinzufügen'}</button>
+        <input
+          type="file"
+          name="image"
+          onChange={handleImageChange}
+          required
+        />
+        <button type="submit">Hinzufuegen</button>
       </form>
     </div>
   );
-}
+};
 
 export default Trips;
