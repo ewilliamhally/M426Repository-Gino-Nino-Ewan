@@ -4,20 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98df9893-5272-4db2-a226-30aa23509d42" name="Changes" comment="renamed saveTrips to CreateTrips">
-      <change afterPath="$PROJECT_DIR$/tripsbackend/src/test/java/bbw/trips/demo/controller/AuthenticationControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tripsbackend/src/test/java/bbw/trips/demo/controller/TripControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tripsbackend/src/test/java/bbw/trips/demo/repository/KeyHolderFactoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tripsbackend/src/test/java/bbw/trips/demo/repository/TripRepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tripsbackend/src/test/java/bbw/trips/demo/repository/UserRepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tripsbackend/src/test/java/bbw/trips/demo/security/auth/AuthenticationServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tripsbackend/src/test/java/bbw/trips/demo/service/trip/TripDtoConverterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tripsbackend/src/test/java/bbw/trips/demo/service/trip/TripEntityConverterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tripsbackend/src/test/java/bbw/trips/demo/service/user/UserDtoConverterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tripsbackend/src/test/java/bbw/trips/demo/service/user/UserEntityConverterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tripsbackend/src/test/java/bbw/trips/demo/service/user/UserServiceTest.java" afterDir="false" />
+    <list default="true" id="98df9893-5272-4db2-a226-30aa23509d42" name="Changes" comment="add junit tests to most of the methodes ( some authentication methodes and models i left without test )">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9315cdce-1136-41c0-8225-19f902f2fb83.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9315cdce-1136-41c0-8225-19f902f2fb83/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9315cdce-1136-41c0-8225-19f902f2fb83/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9315cdce-1136-41c0-8225-19f902f2fb83/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tripsbackend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tripsbackend/database/aria_log.00000001" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/database/aria_log.00000001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tripsbackend/database/aria_log_control" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/database/aria_log_control" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tripsbackend/database/ddl_recovery.log" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/database/ddl_recovery.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tripsbackend/database/demo/User.frm" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/database/demo/User.frm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tripsbackend/database/demo/trips.frm" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/database/demo/trips.frm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tripsbackend/database/demo/user_trips.frm" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/database/demo/user_trips.frm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tripsbackend/database/ib_buffer_pool" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/database/ib_buffer_pool" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tripsbackend/database/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/database/ib_logfile0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tripsbackend/database/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/database/ibdata1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tripsbackend/database/mysql/innodb_index_stats.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/database/mysql/innodb_index_stats.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tripsbackend/database/mysql/innodb_table_stats.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/database/mysql/innodb_table_stats.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tripsbackend/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/tripsbackend/src/main/resources/data.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +40,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Unit_test" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -69,37 +73,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "C:/Nino Dokumente/Schule/Berufsschule/Semester 4/Modul 426/M426Repository-Gino-Nino-Ewan-",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "spring.configuration.checksum": "fe01ce2a7fbac8fafaed7c982a04e229",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Nino Dokumente/Schule/Berufsschule/Semester 4/Modul 426/M426Repository-Gino-Nino-Ewan-&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;fe01ce2a7fbac8fafaed7c982a04e229&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "clickhouse",
-      "mariadb"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;clickhouse&quot;,
+      &quot;mariadb&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="bbw.trips.demo.service.user" />
@@ -125,82 +129,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TripServiceTest">
-    <configuration name="TripDtoConverterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="bbw.trips.demo.service.trip.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="bbw.trips.demo.service.trip" />
-      <option name="MAIN_CLASS_NAME" value="bbw.trips.demo.service.trip.TripDtoConverterTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TripEntityConverterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="bbw.trips.demo.service.trip.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="bbw.trips.demo.service.trip" />
-      <option name="MAIN_CLASS_NAME" value="bbw.trips.demo.service.trip.TripEntityConverterTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TripServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="bbw.trips.demo.service.trip.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="bbw.trips.demo.service.trip" />
-      <option name="MAIN_CLASS_NAME" value="bbw.trips.demo.service.trip.TripServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserEntityConverterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="bbw.trips.demo.service.user.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="bbw.trips.demo.service.user" />
-      <option name="MAIN_CLASS_NAME" value="bbw.trips.demo.service.user.UserEntityConverterTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="bbw.trips.demo.service.user.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="bbw.trips.demo.service.user" />
-      <option name="MAIN_CLASS_NAME" value="bbw.trips.demo.service.user.UserServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="npm.start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -212,24 +141,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/tripsfrontend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Debug Application" />
-      <item itemvalue="JUnit.TripDtoConverterTest" />
-      <item itemvalue="JUnit.TripEntityConverterTest" />
-      <item itemvalue="JUnit.TripServiceTest" />
-      <item itemvalue="JUnit.UserEntityConverterTest" />
-      <item itemvalue="JUnit.UserServiceTest" />
+      <item itemvalue="npm.start" />
       <item itemvalue="Spring Boot.Applicaton" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.TripServiceTest" />
-        <item itemvalue="JUnit.TripEntityConverterTest" />
-        <item itemvalue="JUnit.TripDtoConverterTest" />
-        <item itemvalue="JUnit.UserServiceTest" />
-        <item itemvalue="JUnit.UserEntityConverterTest" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -243,6 +169,9 @@
       <workItem from="1720169453835" duration="1390000" />
       <workItem from="1720185472641" duration="24000" />
       <workItem from="1720422083039" duration="10097000" />
+      <workItem from="1720724748086" duration="1731000" />
+      <workItem from="1720764219822" duration="221000" />
+      <workItem from="1720791697157" duration="1610000" />
     </task>
     <task id="LOCAL-00001" summary="updated project">
       <created>1720170626167</created>
@@ -279,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1720513792313</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add junit tests to most of the methodes ( some authentication methodes and models i left without test )">
+      <created>1720607630892</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1720607630892</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,7 +237,8 @@
     <MESSAGE value="updated project" />
     <MESSAGE value="Created Jwt login prozess" />
     <MESSAGE value="renamed saveTrips to CreateTrips" />
-    <option name="LAST_COMMIT_MESSAGE" value="renamed saveTrips to CreateTrips" />
+    <MESSAGE value="add junit tests to most of the methodes ( some authentication methodes and models i left without test )" />
+    <option name="LAST_COMMIT_MESSAGE" value="add junit tests to most of the methodes ( some authentication methodes and models i left without test )" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
