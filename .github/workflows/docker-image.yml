@@ -1,4 +1,4 @@
-name: Build a Docker image and Push it to ACR
+name: Build and Push Docker Images
 
 on:
   push:
@@ -41,18 +41,4 @@ jobs:
     - name: Build and push tripsbackend image
       run: |
         docker build ./tripsbackend --tag ${{ secrets.DOCKER_USERNAME }}/tripsbackend:latest
-        docker push ${{ secrets.DOCKER_USERNAME }}/tripsbackend:latest
-
-    - name: Start services
-      run: docker-compose up -d
-
-    - name: Run tests
-      run: |
-        # Add your test commands here
-        # For example:
-        # curl -f http://localhost:3000 || exit 1
-        # curl -f http://localhost:8080 || exit 1
-        echo "Tests are not implemented yet."
-
-    - name: Stop and remove services
-      run: docker-compose down
+        docker push ${{ secrets.DOCKER_USERNAME }}/tr
