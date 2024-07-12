@@ -1,0 +1,44 @@
+version: "3.9"
+
+services:
+  bbw-mariadb-dev:
+    image: mariadb:latest
+    container_name: bbw-mariadb-dev
+    environment:
+      - MYSQL_ROOT_PASSWORD=bbw123
+      - MYSQL_DATABASE=demo
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./database:/var/lib/mysql
+
+  bbw-phpmyadmin:
+    depends_on:
+      - bbw-mariadb-dev
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "81:80"
+    environment:
+      - PMA_HOST=bbw-mariadb-dev
+
+  tripsfrontend:
+    build: ./tripsfrontend
+    container_name: tripsfrontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - bbw-mariadb-dev
+    environment:
+      - NODE_ENV=development
+
+  tripsbackend:
+    build: ./tripsbackend
+    container_name: tripsbackend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - bbw-mariadb-dev
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mariadb://bbw-mariadb-dev:3306/demo
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=bbw123
